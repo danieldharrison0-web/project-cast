@@ -1,23 +1,15 @@
-/* CAST Launch Stable Reset */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
+  background: #000;
+  color: #f4efe7;
   font-family: Arial, Helvetica, sans-serif;
-  background:
-    radial-gradient(circle at top, rgba(184,139,74,.18), transparent 30%),
-    linear-gradient(180deg,#181818 0%,#080808 45%,#000 100%);
-  color: #ffffff;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 body::before {
@@ -26,10 +18,9 @@ body::before {
   inset: 0;
   background-image: url("IMG_0316.png");
   background-repeat: no-repeat;
-  background-position: center 8%;
-  background-size: min(950px,90vw);
-  opacity: .92;
-  pointer-events: none;
+  background-position: center top;
+  background-size: min(1100px, 96vw) auto;
+  opacity: 0.96;
   z-index: -2;
 }
 
@@ -37,40 +28,51 @@ body::after {
   content: "";
   position: fixed;
   inset: 0;
-  background:
-    radial-gradient(
-      circle at center,
-      transparent 0%,
-      rgba(0,0,0,.15) 45%,
-      rgba(0,0,0,.82) 100%
-    );
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.02) 0%,
+    rgba(0,0,0,0.18) 38%,
+    rgba(0,0,0,0.78) 62%,
+    #000 100%
+  );
   z-index: -1;
 }
 
-.page {
-  width: min(92%,1200px);
-  margin: auto;
-}
-
-.hero {
+.launch {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: flex-end;
   text-align: center;
-  padding-bottom: 90px;
+  padding: 0 20px 44px;
+}
+
+.content {
+  width: min(760px, 92vw);
+  animation: fadeUp 0.9s ease both;
+}
+
+.eyebrow {
+  color: #b88b4a;
+  text-transform: uppercase;
+  letter-spacing: 0.62em;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+h1 {
+  color: #d3a964;
+  font-size: clamp(44px, 6vw, 76px);
+  letter-spacing: 0.18em;
+  font-weight: 300;
+  margin-bottom: 28px;
 }
 
 .divider {
-  width: 260px;
+  width: min(280px, 64vw);
   height: 1px;
-  margin: 0 auto 35px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #b88b4a,
-    transparent
-  );
+  margin: 0 auto 32px;
+  background: linear-gradient(90deg, transparent, #b88b4a, transparent);
   position: relative;
 }
 
@@ -79,97 +81,132 @@ body::after {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%,-50%);
   width: 8px;
   height: 8px;
-  border-radius: 50%;
   background: #b88b4a;
-  box-shadow: 0 0 16px #b88b4a;
-}
-
-.launching {
-  color: #b88b4a;
-  text-transform: uppercase;
-  letter-spacing: .55em;
-  font-size: 15px;
-  margin-bottom: 28px;
-}
-
-.date {
-  font-size: 72px;
-  color: #d3a964;
-  letter-spacing: .18em;
-  font-weight: 300;
-  margin-bottom: 35px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 18px rgba(184,139,74,0.95);
 }
 
 .tagline {
   color: #b88b4a;
   text-transform: uppercase;
-  letter-spacing: .25em;
-  line-height: 2;
-  margin-bottom: 40px;
+  letter-spacing: 0.32em;
+  line-height: 2.1;
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+
+.founders {
+  color: #d8d2ca;
+  font-size: 18px;
+  margin-bottom: 28px;
 }
 
 .signup {
   display: flex;
-  max-width: 700px;
-  margin: auto;
-  border: 1px solid rgba(184,139,74,.45);
+  width: 100%;
+  border: 1px solid rgba(184,139,74,0.58);
+  background: rgba(0,0,0,0.78);
   overflow: hidden;
-  background: rgba(255,255,255,.03);
-  backdrop-filter: blur(8px);
 }
 
 .signup input {
   flex: 1;
-  padding: 20px;
-  background: none;
-  border: none;
+  padding: 23px 26px;
+  background: transparent;
+  border: 0;
   color: white;
   outline: none;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .signup input::placeholder {
-  color: #777;
+  color: rgba(255,255,255,0.42);
 }
 
 .signup button {
-  padding: 0 35px;
-  border: none;
-  cursor: pointer;
-  background: linear-gradient(
-    135deg,
-    #d8ad65,
-    #9d6f2f
-  );
+  width: 260px;
+  border: 0;
+  background: linear-gradient(135deg, #d8ad65, #9d6f2f);
   color: #080808;
-  font-weight: 700;
-  transition: .25s;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
 }
 
-.signup button:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 22px rgba(216,173,101,.45);
+.mark {
+  margin: 34px auto 0;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(184,139,74,0.65);
+  border-radius: 50%;
+  color: #d8ad65;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  animation: pulse 1.8s ease-in-out infinite;
 }
 
-@media(max-width:768px) {
-  .date {
-    font-size: 48px;
-    letter-spacing: .08em;
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.75;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  body::before {
+    background-size: 150vw auto;
+    background-position: center top;
+  }
+
+  .launch {
+    padding-bottom: 32px;
+  }
+
+  .eyebrow {
+    letter-spacing: 0.34em;
+  }
+
+  h1 {
+    font-size: 40px;
+    letter-spacing: 0.08em;
+  }
+
+  .tagline {
+    letter-spacing: 0.17em;
+    font-size: 12px;
   }
 
   .signup {
     flex-direction: column;
   }
 
-  .signup button {
-    padding: 18px;
+  .signup input {
+    text-align: center;
   }
 
-  body::before {
-    background-size: 140vw;
-    background-position: center 6%;
+  .signup button {
+    width: 100%;
+    padding: 19px;
   }
 }
