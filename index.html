@@ -4,216 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CAST</title>
-
-  <style>
-    * { box-sizing: border-box; }
-
-    html, body {
-      margin: 0;
-      min-height: 100%;
-      background: #030303;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #f4efe7;
-    }
-
-    body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 50% 0%, rgba(186,138,65,0.24), transparent 30%),
-        radial-gradient(circle at 50% 38%, rgba(255,255,255,0.035), transparent 28%),
-        linear-gradient(180deg, #15120e 0%, #050505 55%, #000 100%);
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-image: url("IMG_0316.png");
-      background-repeat: no-repeat;
-      background-position: center 13%;
-      background-size: min(980px, 95vw) auto;
-      opacity: 0.92;
-      filter: contrast(1.08) brightness(0.92);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.22) 48%, rgba(0,0,0,0.72) 100%);
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .page {
-      width: min(92vw, 980px);
-      min-height: 100vh;
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 44vh 20px 7vh;
-    }
-
-    .divider {
-      width: min(360px, 62vw);
-      height: 1px;
-      margin: 0 auto 28px;
-      background: linear-gradient(90deg, transparent, rgba(190,143,72,0.85), transparent);
-      position: relative;
-    }
-
-    .divider::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: #b88b4a;
-      transform: translate(-50%, -50%);
-      box-shadow: 0 0 22px rgba(184,139,74,0.85);
-    }
-
-    .launching {
-      color: #b88b4a;
-      letter-spacing: 0.55em;
-      text-transform: uppercase;
-      font-size: clamp(13px, 2vw, 20px);
-      margin-bottom: 24px;
-    }
-
-    .date {
-      color: #c79a52;
-      font-size: clamp(44px, 9vw, 86px);
-      letter-spacing: 0.18em;
-      margin-bottom: 34px;
-      font-weight: 500;
-    }
-
-    .tagline {
-      color: #c79a52;
-      text-transform: uppercase;
-      letter-spacing: 0.36em;
-      line-height: 2.2;
-      font-size: clamp(12px, 1.8vw, 17px);
-      margin-bottom: 32px;
-    }
-
-    .signup {
-      width: min(720px, 100%);
-      margin: 0 auto;
-      display: flex;
-      border: 1px solid rgba(199,154,82,0.7);
-      border-radius: 4px;
-      overflow: hidden;
-      background: rgba(0,0,0,0.62);
-      box-shadow: 0 0 60px rgba(0,0,0,0.55);
-    }
-
-    input {
-      flex: 1;
-      padding: 20px 24px;
-      border: none;
-      outline: none;
-      background: transparent;
-      color: white;
-      font-size: 16px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    input::placeholder {
-      color: rgba(255,255,255,0.38);
-    }
-
-    button {
-      width: 260px;
-      border: none;
-      background: linear-gradient(135deg, #d7ad63, #9c6b28);
-      color: #080808;
-      font-weight: 800;
-      letter-spacing: 0.16em;
-      font-size: 15px;
-    }
-
-    .socials {
-      margin-top: 28px;
-      color: #b88b4a;
-      letter-spacing: 1.3em;
-      font-size: 22px;
-      opacity: 0.85;
-    }
-
-    @media (max-width: 720px) {
-      body::before {
-        background-position: center 8%;
-        background-size: 150vw auto;
-      }
-
-      .page {
-        padding: 42vh 18px 6vh;
-      }
-
-      .date {
-        letter-spacing: 0.08em;
-      }
-
-      .tagline {
-        letter-spacing: 0.18em;
-      }
-
-      .signup {
-        flex-direction: column;
-      }
-
-      button {
-        width: 100%;
-        padding: 18px;
-      }
-
-      input {
-        text-align: center;
-      }
-
-      .socials {
-        letter-spacing: 0.8em;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
   <main class="page">
-    <div class="divider"></div>
+    <section class="hero">
+      <div class="divider"></div>
 
-    <div class="launching">Launching</div>
+      <p class="launching">Launching</p>
 
-    <div class="date">01 · 11 · 2026</div>
+      <h1 class="date">01 · 11 · 2026</h1>
 
-    <div class="divider"></div>
+      <div class="divider"></div>
 
-    <div class="tagline">
-      Built by Anglers.<br />
-      Trusted by Everyone.
-    </div>
+      <p class="tagline">
+        Built by Anglers.<br />
+        Trusted by Everyone.
+      </p>
 
-    <form class="signup">
-      <input type="email" placeholder="Enter your email address" />
-      <button type="button">Join the List</button>
-    </form>
-
-    <div class="socials">◎ ▶ ♪</div>
+      <form class="signup">
+        <input type="email" placeholder="Enter your email address" />
+        <button type="button">Join the List</button>
+      </form>
+    </section>
   </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
