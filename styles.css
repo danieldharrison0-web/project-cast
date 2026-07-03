@@ -1,4 +1,4 @@
-/* CAST Design System v1.1 */
+/* CAST Design System v1.2 */
 
 * {
   margin: 0;
@@ -22,9 +22,9 @@ body::before {
   inset: 0;
   background-image: url("IMG_0316.png");
   background-repeat: no-repeat;
-  background-position: center 4%;
-  background-size: min(1050px, 94vw) auto;
-  opacity: 0.9;
+  background-position: center 3%;
+  background-size: min(1120px, 96vw) auto;
+  opacity: 0.94;
   pointer-events: none;
   z-index: -2;
 }
@@ -35,7 +35,7 @@ body::after {
   inset: 0;
   background:
     radial-gradient(circle at 50% 5%, rgba(210,160,80,0.16), transparent 28%),
-    radial-gradient(circle at 50% 45%, transparent 0%, rgba(0,0,0,0.35) 46%, rgba(0,0,0,0.92) 100%);
+    radial-gradient(circle at 50% 45%, transparent 0%, rgba(0,0,0,0.28) 44%, rgba(0,0,0,0.94) 100%);
   pointer-events: none;
   z-index: -1;
 }
@@ -53,7 +53,7 @@ body::after {
   align-items: center;
   justify-content: flex-start;
   text-align: center;
-  padding-top: 23vh;
+  padding-top: 27vh;
 }
 
 .divider {
@@ -82,15 +82,15 @@ body::after {
   text-transform: uppercase;
   letter-spacing: .55em;
   font-size: 14px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .date {
-  font-size: clamp(44px, 6vw, 76px);
+  font-size: clamp(40px, 5vw, 64px);
   color: #d3a964;
   letter-spacing: .16em;
   font-weight: 300;
-  margin-bottom: 26px;
+  margin-bottom: 24px;
 }
 
 .tagline {
@@ -98,23 +98,23 @@ body::after {
   text-transform: uppercase;
   letter-spacing: .28em;
   line-height: 2;
-  margin-bottom: 30px;
+  margin-bottom: 34px;
   font-size: 14px;
 }
 
 .signup {
   display: flex;
-  width: min(680px, 92vw);
+  width: min(760px, 92vw);
   margin: 0 auto;
-  border: 1px solid rgba(184,139,74,.45);
+  border: 1px solid rgba(184,139,74,.55);
   overflow: hidden;
-  background: rgba(0,0,0,.58);
+  background: rgba(0,0,0,.62);
   backdrop-filter: blur(8px);
 }
 
 .signup input {
   flex: 1;
-  padding: 19px 22px;
+  padding: 24px 24px;
   background: transparent;
   border: none;
   color: white;
@@ -127,7 +127,7 @@ body::after {
 }
 
 .signup button {
-  min-width: 260px;
+  min-width: 320px;
   padding: 0 28px;
   border: none;
   cursor: pointer;
@@ -136,10 +136,6 @@ body::after {
   font-weight: 800;
   letter-spacing: .06em;
   transition: .25s ease;
-}
-
-.signup button::first-letter {
-  text-transform: uppercase;
 }
 
 .signup button:hover {
@@ -157,7 +153,7 @@ body::after {
   }
 
   .date {
-    font-size: 42px;
+    font-size: 40px;
     letter-spacing: .08em;
   }
 
