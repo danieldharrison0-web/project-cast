@@ -1,4 +1,4 @@
-/* CAST Design System v1.2 */
+/* CAST Launch Page v1.3 */
 
 * {
   margin: 0;
@@ -9,10 +9,13 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #000;
-  color: #fff;
   min-height: 100vh;
+  background:
+    radial-gradient(circle at 50% 5%, rgba(197, 145, 66, 0.22), transparent 28%),
+    radial-gradient(circle at 50% 40%, rgba(255,255,255,0.035), transparent 24%),
+    linear-gradient(180deg, #14110d 0%, #050505 52%, #000 100%);
+  color: #f4efe7;
+  font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
 
@@ -20,47 +23,52 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url("IMG_0316.png");
-  background-repeat: no-repeat;
-  background-position: center 3%;
-  background-size: min(1120px, 96vw) auto;
-  opacity: 0.94;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+  background-size: 52px 52px;
+  opacity: 0.12;
   pointer-events: none;
-  z-index: -2;
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(circle at 50% 5%, rgba(210,160,80,0.16), transparent 28%),
-    radial-gradient(circle at 50% 45%, transparent 0%, rgba(0,0,0,0.28) 44%, rgba(0,0,0,0.94) 100%);
-  pointer-events: none;
-  z-index: -1;
 }
 
 .page {
-  width: min(92vw, 1200px);
   min-height: 100vh;
-  margin: auto;
+  width: min(92vw, 1100px);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 0;
 }
 
 .hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  text-align: center;
-  padding-top: 27vh;
+  width: 100%;
+  animation: riseIn 1.1s ease forwards;
+}
+
+.hero::before {
+  content: "";
+  display: block;
+  width: min(820px, 92vw);
+  aspect-ratio: 5 / 1.35;
+  margin: 0 auto 54px;
+  background-image: url("IMG_0316.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.92;
+  filter: contrast(1.08) brightness(0.92);
+  border-radius: 2px;
+  mask-image: linear-gradient(to bottom, black 0%, black 72%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 72%, transparent 100%);
 }
 
 .divider {
-  width: 280px;
+  width: min(300px, 65vw);
   height: 1px;
-  margin: 0 auto 24px;
-  background: linear-gradient(90deg, transparent, rgba(184,139,74,.9), transparent);
+  margin: 0 auto 26px;
+  background: linear-gradient(90deg, transparent, rgba(184,139,74,.88), transparent);
   position: relative;
 }
 
@@ -80,41 +88,41 @@ body::after {
 .launching {
   color: #b88b4a;
   text-transform: uppercase;
-  letter-spacing: .55em;
-  font-size: 14px;
+  letter-spacing: .58em;
+  font-size: 13px;
   margin-bottom: 18px;
 }
 
 .date {
-  font-size: clamp(40px, 5vw, 64px);
+  font-size: clamp(42px, 6vw, 72px);
   color: #d3a964;
-  letter-spacing: .16em;
+  letter-spacing: .18em;
   font-weight: 300;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 .tagline {
   color: #b88b4a;
   text-transform: uppercase;
-  letter-spacing: .28em;
-  line-height: 2;
+  letter-spacing: .3em;
+  line-height: 2.1;
   margin-bottom: 34px;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .signup {
   display: flex;
-  width: min(760px, 92vw);
+  width: min(720px, 92vw);
   margin: 0 auto;
   border: 1px solid rgba(184,139,74,.55);
   overflow: hidden;
-  background: rgba(0,0,0,.62);
-  backdrop-filter: blur(8px);
+  background: rgba(0,0,0,.68);
+  box-shadow: 0 0 50px rgba(0,0,0,.55);
 }
 
 .signup input {
   flex: 1;
-  padding: 24px 24px;
+  padding: 23px 24px;
   background: transparent;
   border: none;
   color: white;
@@ -127,7 +135,7 @@ body::after {
 }
 
 .signup button {
-  min-width: 320px;
+  min-width: 310px;
   padding: 0 28px;
   border: none;
   cursor: pointer;
@@ -139,26 +147,39 @@ body::after {
 }
 
 .signup button:hover {
-  box-shadow: 0 0 22px rgba(216,173,101,.45);
+  box-shadow: 0 0 24px rgba(216,173,101,.48);
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 768px) {
-  body::before {
-    background-position: center 5%;
-    background-size: 145vw auto;
+  .page {
+    padding: 34px 0;
+    align-items: flex-start;
   }
 
-  .hero {
-    padding-top: 38vh;
-  }
-
-  .date {
-    font-size: 40px;
-    letter-spacing: .08em;
+  .hero::before {
+    width: 100vw;
+    aspect-ratio: 3.2 / 1.45;
+    margin-bottom: 48px;
   }
 
   .launching {
     letter-spacing: .32em;
+  }
+
+  .date {
+    font-size: 38px;
+    letter-spacing: .08em;
   }
 
   .tagline {
@@ -170,12 +191,12 @@ body::after {
     flex-direction: column;
   }
 
+  .signup input {
+    text-align: center;
+  }
+
   .signup button {
     min-width: 100%;
     padding: 18px;
-  }
-
-  .signup input {
-    text-align: center;
   }
 }
