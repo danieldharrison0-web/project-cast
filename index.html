@@ -1,158 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CAST</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CAST</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+* { box-sizing: border-box; }
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at 50% 8%, rgba(184, 135, 58, 0.2), transparent 26%),
-        radial-gradient(circle at center, #171717 0%, #070707 48%, #000 100%);
-      color: #f5f1e8;
-      font-family: Arial, Helvetica, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 50% 5%, rgba(180,130,60,.22), transparent 28%),
+    radial-gradient(circle at center, #151515 0%, #050505 55%, #000 100%);
+  color: #f4f0e8;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
-      background-size: 44px 44px;
-      opacity: 0.35;
-      pointer-events: none;
-    }
+.wrap {
+  width: min(92%, 1000px);
+  text-align: center;
+  padding: 40px 20px;
+}
 
-    .wrap {
-      width: min(92%, 980px);
-      text-align: center;
-      padding: 40px 20px;
-      position: relative;
-      z-index: 1;
-    }
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(12px, 2vw, 28px);
+  margin-bottom: 38px;
+  filter: drop-shadow(0 22px 18px rgba(0,0,0,.9));
+}
 
-    .cast-logo {
-      font-size: clamp(78px, 18vw, 210px);
-      line-height: 0.9;
-      letter-spacing: 0.09em;
-      font-weight: 900;
-      color: #050505;
-      text-shadow:
-        2px 2px 3px rgba(255,255,255,0.08),
-        -3px -3px 8px rgba(0,0,0,0.95),
-        0 0 45px rgba(195, 139, 57, 0.14);
-      margin-bottom: 38px;
-      user-select: none;
-    }
+.letter {
+  font-size: clamp(90px, 18vw, 220px);
+  font-weight: 900;
+  line-height: .8;
+  color: #030303;
+  text-shadow:
+    2px 2px 3px rgba(255,255,255,.08),
+    -4px -4px 10px rgba(0,0,0,1),
+    0 0 35px rgba(180,130,60,.10);
+}
 
-    .tagline {
-      color: #b88b4a;
-      text-transform: uppercase;
-      letter-spacing: 0.34em;
-      font-size: clamp(11px, 1.6vw, 14px);
-      margin-bottom: 40px;
-    }
+.a-mark {
+  position: relative;
+  width: clamp(82px, 14vw, 180px);
+  height: clamp(82px, 14vw, 180px);
+}
 
-    .coming {
-      font-size: clamp(18px, 3vw, 28px);
-      letter-spacing: 0.08em;
-      margin: 0 0 18px;
-      color: #f2eadc;
-      font-weight: 500;
-    }
+.a-mark:before,
+.a-mark:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 28%;
+  height: 100%;
+  background: #030303;
+  box-shadow:
+    2px 2px 3px rgba(255,255,255,.08),
+    -4px -4px 10px rgba(0,0,0,1);
+}
 
-    .sub {
-      color: #9b958b;
-      font-size: 15px;
-      margin-bottom: 32px;
-    }
+.a-mark:before {
+  left: 18%;
+  transform: skewX(-24deg);
+}
 
-    form {
-      width: min(100%, 540px);
-      margin: 0 auto;
-      display: flex;
-      border: 1px solid rgba(184, 139, 74, 0.38);
-      background: rgba(255,255,255,0.035);
-      border-radius: 4px;
-      overflow: hidden;
-      box-shadow: 0 0 45px rgba(0,0,0,0.45);
-    }
+.a-mark:after {
+  right: 18%;
+  transform: skewX(24deg);
+}
 
-    input {
-      flex: 1;
-      padding: 18px 20px;
-      background: transparent;
-      border: 0;
-      color: #fff;
-      font-size: 16px;
-      outline: none;
-    }
+.dot {
+  position: absolute;
+  width: 18%;
+  height: 18%;
+  border-radius: 50%;
+  background: #030303;
+  left: 50%;
+  bottom: 3%;
+  transform: translateX(-50%);
+  box-shadow:
+    2px 2px 3px rgba(255,255,255,.08),
+    -4px -4px 10px rgba(0,0,0,1);
+}
 
-    input::placeholder {
-      color: #777;
-    }
+.tagline {
+  color: #b88b4a;
+  text-transform: uppercase;
+  letter-spacing: .36em;
+  font-size: clamp(11px, 1.5vw, 14px);
+  margin-bottom: 70px;
+}
 
-    button {
-      border: 0;
-      padding: 0 28px;
-      background: linear-gradient(135deg, #d5aa61, #9f702e);
-      color: #070707;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      cursor: pointer;
-    }
+h1 {
+  font-size: clamp(20px, 3vw, 34px);
+  letter-spacing: .18em;
+  font-weight: 400;
+  margin-bottom: 22px;
+}
 
-    .foot {
-      margin-top: 34px;
-      color: #5f5a52;
-      font-size: 12px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-    }
+p {
+  color: #d7d1c8;
+  font-size: 17px;
+  margin-bottom: 30px;
+}
 
-    @media (max-width: 620px) {
-      .tagline {
-        letter-spacing: 0.18em;
-        line-height: 1.8;
-      }
+form {
+  width: min(100%, 620px);
+  margin: auto;
+  display: flex;
+  border: 1px solid rgba(184,139,74,.38);
+  background: rgba(255,255,255,.025);
+  border-radius: 4px;
+  overflow: hidden;
+}
 
-      form {
-        flex-direction: column;
-      }
+input {
+  flex: 1;
+  padding: 20px;
+  background: transparent;
+  border: 0;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
 
-      button {
-        padding: 17px;
-      }
-    }
-  </style>
+button {
+  border: 0;
+  padding: 0 34px;
+  background: linear-gradient(135deg, #d8ad65, #a37432);
+  color: #070707;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+.foot {
+  margin-top: 38px;
+  color: #b88b4a;
+  letter-spacing: .28em;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 650px) {
+  .logo { gap: 8px; }
+  .tagline { letter-spacing: .18em; line-height: 1.8; }
+  form { flex-direction: column; }
+  button { padding: 18px; }
+}
+</style>
 </head>
 
 <body>
   <main class="wrap">
-    <div class="cast-logo">CAST</div>
+    <div class="logo">
+      <span class="letter">C</span>
+      <span class="a-mark"><span class="dot"></span></span>
+      <span class="letter">S</span>
+      <span class="letter">T</span>
+    </div>
 
     <div class="tagline">Built by Anglers. Trusted by Everyone.</div>
 
-    <h1 class="coming">Something Different Is Coming.</h1>
+    <h1>Something Different Is Coming.</h1>
 
-    <p class="sub">Join the Founding Members list.</p>
+    <p>Join the Founding Members list.</p>
 
     <form>
       <input type="email" placeholder="Enter your email address" />
-      <button type="submit">JOIN</button>
+      <button type="submit">JOIN THE LIST</button>
     </form>
 
     <div class="foot">Project Cast</div>
