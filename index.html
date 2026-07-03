@@ -1,184 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CAST</title>
-
-<style>
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  background:
-    radial-gradient(circle at 50% 5%, rgba(180,130,60,.22), transparent 28%),
-    radial-gradient(circle at center, #151515 0%, #050505 55%, #000 100%);
-  color: #f4f0e8;
-  font-family: Arial, Helvetica, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.wrap {
-  width: min(92%, 1000px);
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: clamp(12px, 2vw, 28px);
-  margin-bottom: 38px;
-  filter: drop-shadow(0 22px 18px rgba(0,0,0,.9));
-}
-
-.letter {
-  font-size: clamp(90px, 18vw, 220px);
-  font-weight: 900;
-  line-height: .8;
-  color: #030303;
-  text-shadow:
-    2px 2px 3px rgba(255,255,255,.08),
-    -4px -4px 10px rgba(0,0,0,1),
-    0 0 35px rgba(180,130,60,.10);
-}
-
-.a-mark {
-  position: relative;
-  width: clamp(82px, 14vw, 180px);
-  height: clamp(82px, 14vw, 180px);
-}
-
-.a-mark:before,
-.a-mark:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 28%;
-  height: 100%;
-  background: #030303;
-  box-shadow:
-    2px 2px 3px rgba(255,255,255,.08),
-    -4px -4px 10px rgba(0,0,0,1);
-}
-
-.a-mark:before {
-  left: 18%;
-  transform: skewX(-24deg);
-}
-
-.a-mark:after {
-  right: 18%;
-  transform: skewX(24deg);
-}
-
-.dot {
-  position: absolute;
-  width: 18%;
-  height: 18%;
-  border-radius: 50%;
-  background: #030303;
-  left: 50%;
-  bottom: 3%;
-  transform: translateX(-50%);
-  box-shadow:
-    2px 2px 3px rgba(255,255,255,.08),
-    -4px -4px 10px rgba(0,0,0,1);
-}
-
-.tagline {
-  color: #b88b4a;
-  text-transform: uppercase;
-  letter-spacing: .36em;
-  font-size: clamp(11px, 1.5vw, 14px);
-  margin-bottom: 70px;
-}
-
-h1 {
-  font-size: clamp(20px, 3vw, 34px);
-  letter-spacing: .18em;
-  font-weight: 400;
-  margin-bottom: 22px;
-}
-
-p {
-  color: #d7d1c8;
-  font-size: 17px;
-  margin-bottom: 30px;
-}
-
-form {
-  width: min(100%, 620px);
-  margin: auto;
-  display: flex;
-  border: 1px solid rgba(184,139,74,.38);
-  background: rgba(255,255,255,.025);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-input {
-  flex: 1;
-  padding: 20px;
-  background: transparent;
-  border: 0;
-  color: white;
-  font-size: 16px;
-  outline: none;
-}
-
-button {
-  border: 0;
-  padding: 0 34px;
-  background: linear-gradient(135deg, #d8ad65, #a37432);
-  color: #070707;
-  font-weight: 800;
-  letter-spacing: .08em;
-}
-
-.foot {
-  margin-top: 38px;
-  color: #b88b4a;
-  letter-spacing: .28em;
-  font-size: 12px;
-  text-transform: uppercase;
-}
-
-@media (max-width: 650px) {
-  .logo { gap: 8px; }
-  .tagline { letter-spacing: .18em; line-height: 1.8; }
-  form { flex-direction: column; }
-  button { padding: 18px; }
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CAST | Built by Anglers</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <main class="wrap">
-    <div class="logo">
-      <span class="letter">C</span>
-      <span class="a-mark"><span class="dot"></span></span>
-      <span class="letter">S</span>
-      <span class="letter">T</span>
-    </div>
+  <header class="site-header">
+    <div class="brand">CAST</div>
+    <nav>
+      <a href="#story">Our Story</a>
+      <a href="#drops">Live Drops</a>
+      <a href="#apparel">Apparel</a>
+      <a href="#members">Members</a>
+    </nav>
+  </header>
 
-    <div class="tagline">Built by Anglers. Trusted by Everyone.</div>
+  <main>
+    <section class="hero section-review">
+      <div class="hero-inner">
+        <div class="status-pill">Homepage Hero · Review</div>
 
-    <h1>Something Different Is Coming.</h1>
+        <div class="hero-logo-bg"></div>
 
-    <p>Join the Founding Members list.</p>
+        <div class="hero-content">
+          <p class="eyebrow">Launching</p>
+          <h1>01 · 11 · 2026</h1>
 
-    <form>
-      <input type="email" placeholder="Enter your email address" />
-      <button type="submit">JOIN THE LIST</button>
-    </form>
+          <div class="divider"></div>
 
-    <div class="foot">Project Cast</div>
+          <p class="tagline">
+            Built by Anglers.<br />
+            Trusted by Everyone.
+          </p>
+
+          <p class="small-copy">Join the Founding Members list.</p>
+
+          <form class="signup">
+            <input type="email" placeholder="Your email address" />
+            <button type="button">Join the List</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="story" class="story section">
+      <p class="section-label">Our Story</p>
+      <h2>Two anglers. One vision.</h2>
+      <p>
+        CAST is being built by Daniel Harrison and Dale Warren — two anglers creating
+        the kind of brand they would be proud to be part of themselves.
+      </p>
+      <p>
+        Trust and quality come first. If we would not proudly use it ourselves,
+        it does not belong on CAST.
+      </p>
+    </section>
+
+    <section id="drops" class="section">
+      <p class="section-label">Live Drops</p>
+      <h2>Premium drops are coming.</h2>
+
+      <div class="cards">
+        <article class="card">
+          <span>Drop 001</span>
+          <h3>Premium Tackle</h3>
+          <p>Curated prizes selected by anglers.</p>
+        </article>
+
+        <article class="card">
+          <span>Drop 002</span>
+          <h3>Instant Wins</h3>
+          <p>Random ticket numbers. Real excitement.</p>
+        </article>
+
+        <article class="card">
+          <span>Drop 003</span>
+          <h3>Auto Draws</h3>
+          <p>Every Drop drawn. Every time.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="apparel" class="section apparel">
+      <p class="section-label">CAST Apparel</p>
+      <h2>Founder Collection 001.</h2>
+      <p>
+        Premium clothing designed for life on and off the bank.
+      </p>
+    </section>
+
+    <section id="members" class="section members">
+      <p class="section-label">Founding Members</p>
+      <h2>Be part of CAST from the beginning.</h2>
+      <form class="signup wide">
+        <input type="email" placeholder="Your email address" />
+        <button type="button">Join the List</button>
+      </form>
+    </section>
   </main>
+
+  <footer>
+    <p>CAST</p>
+    <span>Built by Anglers. Trusted by Everyone.</span>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
