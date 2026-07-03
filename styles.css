@@ -1,1 +1,315 @@
-/* CAST Design System */
+/* ===========================
+
+   CAST Design System v1.0
+
+=========================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:
+
+        radial-gradient(circle at top, rgba(184,139,74,.18), transparent 30%),
+
+        linear-gradient(180deg,#181818 0%,#080808 45%,#000 100%);
+
+    color:#ffffff;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+}
+
+/* Background logo */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:url("IMG_0316.png");
+
+    background-repeat:no-repeat;
+
+    background-position:center 8%;
+
+    background-size:min(950px,90vw);
+
+    opacity:.92;
+
+    pointer-events:none;
+
+    z-index:-2;
+
+}
+
+/* Dark overlay */
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(circle at center,
+
+        transparent 0%,
+
+        rgba(0,0,0,.15) 45%,
+
+        rgba(0,0,0,.82) 100%);
+
+    z-index:-1;
+
+}
+
+.page{
+
+    width:min(92%,1200px);
+
+    margin:auto;
+
+}
+
+/* Hero */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    text-align:center;
+
+    padding-bottom:90px;
+
+}
+
+.divider{
+
+    width:260px;
+
+    height:1px;
+
+    margin:0 auto 35px;
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        #b88b4a,
+
+        transparent
+
+    );
+
+    position:relative;
+
+}
+
+.divider::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:#b88b4a;
+
+    box-shadow:0 0 16px #b88b4a;
+
+}
+
+.launching{
+
+    color:#b88b4a;
+
+    text-transform:uppercase;
+
+    letter-spacing:.55em;
+
+    font-size:15px;
+
+    margin-bottom:28px;
+
+}
+
+.date{
+
+    font-size:72px;
+
+    color:#d3a964;
+
+    letter-spacing:.18em;
+
+    font-weight:300;
+
+    margin-bottom:35px;
+
+}
+
+.tagline{
+
+    color:#b88b4a;
+
+    text-transform:uppercase;
+
+    letter-spacing:.25em;
+
+    line-height:2;
+
+    margin-bottom:40px;
+
+}
+
+.signup{
+
+    display:flex;
+
+    max-width:700px;
+
+    margin:auto;
+
+    border:1px solid rgba(184,139,74,.45);
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.03);
+
+    backdrop-filter:blur(8px);
+
+}
+
+.signup input{
+
+    flex:1;
+
+    padding:20px;
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    outline:none;
+
+    font-size:15px;
+
+}
+
+.signup input::placeholder{
+
+    color:#777;
+
+}
+
+.signup button{
+
+    padding:0 35px;
+
+    border:none;
+
+    cursor:pointer;
+
+    background:linear-gradient(
+
+        135deg,
+
+        #d8ad65,
+
+        #9d6f2f
+
+    );
+
+    color:#080808;
+
+    font-weight:700;
+
+    transition:.25s;
+
+}
+
+.signup button:hover{
+
+    transform:scale(1.03);
+
+    box-shadow:0 0 22px rgba(216,173,101,.45);
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.date{
+
+font-size:48px;
+
+letter-spacing:.08em;
+
+}
+
+.signup{
+
+flex-direction:column;
+
+}
+
+.signup button{
+
+padding:18px;
+
+}
+
+body::before{
+
+background-size:140vw;
+
+background-position:center 6%;
+
+}
+
+}
