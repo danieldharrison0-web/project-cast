@@ -6,16 +6,14 @@
   <title>CAST</title>
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html, body {
       margin: 0;
       min-height: 100%;
-      background: #000;
+      background: #030303;
       font-family: Arial, Helvetica, sans-serif;
-      color: #f4f0e8;
+      color: #f4efe7;
     }
 
     body {
@@ -23,49 +21,54 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background:
-        radial-gradient(circle at 50% 0%, rgba(184, 135, 58, 0.22), transparent 30%),
-        radial-gradient(circle at center, #161616 0%, #070707 55%, #000 100%);
       overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(186,138,65,0.24), transparent 30%),
+        radial-gradient(circle at 50% 38%, rgba(255,255,255,0.035), transparent 28%),
+        linear-gradient(180deg, #15120e 0%, #050505 55%, #000 100%);
     }
 
     body::before {
       content: "";
       position: fixed;
       inset: 0;
-      background:
-        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
-      background-size: 42px 42px;
-      opacity: 0.22;
+      background-image: url("IMG_0316.png");
+      background-repeat: no-repeat;
+      background-position: center 13%;
+      background-size: min(980px, 95vw) auto;
+      opacity: 0.92;
+      filter: contrast(1.08) brightness(0.92);
       pointer-events: none;
+      z-index: 0;
     }
 
-    .page {
-      width: min(92vw, 1050px);
-      text-align: center;
-      padding: 40px 20px;
-      position: relative;
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.22) 48%, rgba(0,0,0,0.72) 100%);
+      pointer-events: none;
       z-index: 1;
     }
 
-    .logo {
-      width: min(900px, 90vw);
-      display: block;
-      margin: 0 auto 46px;
-      filter: drop-shadow(0 30px 28px rgba(0,0,0,0.9));
+    .page {
+      width: min(92vw, 980px);
+      min-height: 100vh;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 44vh 20px 7vh;
     }
 
     .divider {
-      width: 240px;
+      width: min(360px, 62vw);
       height: 1px;
-      margin: 0 auto 42px;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(184, 135, 58, 0.75),
-        transparent
-      );
+      margin: 0 auto 28px;
+      background: linear-gradient(90deg, transparent, rgba(190,143,72,0.85), transparent);
       position: relative;
     }
 
@@ -74,93 +77,117 @@
       position: absolute;
       left: 50%;
       top: 50%;
-      width: 8px;
-      height: 8px;
-      transform: translate(-50%, -50%);
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
       background: #b88b4a;
-      box-shadow: 0 0 20px rgba(184, 135, 58, 0.9);
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 22px rgba(184,139,74,0.85);
     }
 
-    .headline {
-      font-size: clamp(20px, 3vw, 34px);
-      letter-spacing: 0.22em;
+    .launching {
+      color: #b88b4a;
+      letter-spacing: 0.55em;
       text-transform: uppercase;
-      font-weight: 400;
-      margin: 0 0 22px;
-      color: #f2eee8;
+      font-size: clamp(13px, 2vw, 20px);
+      margin-bottom: 24px;
     }
 
-    .sub {
-      color: #d0cac0;
-      font-size: clamp(16px, 2vw, 20px);
-      margin: 0 0 32px;
+    .date {
+      color: #c79a52;
+      font-size: clamp(44px, 9vw, 86px);
+      letter-spacing: 0.18em;
+      margin-bottom: 34px;
+      font-weight: 500;
     }
 
-    form {
-      width: min(100%, 640px);
+    .tagline {
+      color: #c79a52;
+      text-transform: uppercase;
+      letter-spacing: 0.36em;
+      line-height: 2.2;
+      font-size: clamp(12px, 1.8vw, 17px);
+      margin-bottom: 32px;
+    }
+
+    .signup {
+      width: min(720px, 100%);
       margin: 0 auto;
       display: flex;
-      border: 1px solid rgba(184, 139, 74, 0.42);
+      border: 1px solid rgba(199,154,82,0.7);
       border-radius: 4px;
       overflow: hidden;
-      background: rgba(0,0,0,0.55);
-      box-shadow: 0 0 60px rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.62);
+      box-shadow: 0 0 60px rgba(0,0,0,0.55);
     }
 
     input {
       flex: 1;
-      padding: 20px 22px;
-      background: transparent;
+      padding: 20px 24px;
       border: none;
       outline: none;
-      color: #fff;
+      background: transparent;
+      color: white;
       font-size: 16px;
-    }
-
-    input::placeholder {
-      color: #777;
-    }
-
-    button {
-      border: none;
-      padding: 0 34px;
-      background: linear-gradient(135deg, #d8ad65, #9f702e);
-      color: #070707;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      cursor: pointer;
-    }
-
-    .footer {
-      margin-top: 40px;
-      color: #b88b4a;
-      letter-spacing: 0.35em;
-      font-size: 12px;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    @media (max-width: 650px) {
-      .logo {
-        width: 96vw;
-        margin-bottom: 34px;
+    input::placeholder {
+      color: rgba(255,255,255,0.38);
+    }
+
+    button {
+      width: 260px;
+      border: none;
+      background: linear-gradient(135deg, #d7ad63, #9c6b28);
+      color: #080808;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      font-size: 15px;
+    }
+
+    .socials {
+      margin-top: 28px;
+      color: #b88b4a;
+      letter-spacing: 1.3em;
+      font-size: 22px;
+      opacity: 0.85;
+    }
+
+    @media (max-width: 720px) {
+      body::before {
+        background-position: center 8%;
+        background-size: 150vw auto;
       }
 
-      .headline {
-        letter-spacing: 0.12em;
-        line-height: 1.5;
+      .page {
+        padding: 42vh 18px 6vh;
       }
 
-      form {
+      .date {
+        letter-spacing: 0.08em;
+      }
+
+      .tagline {
+        letter-spacing: 0.18em;
+      }
+
+      .signup {
         flex-direction: column;
       }
 
       button {
+        width: 100%;
         padding: 18px;
       }
 
-      .footer {
-        letter-spacing: 0.22em;
+      input {
+        text-align: center;
+      }
+
+      .socials {
+        letter-spacing: 0.8em;
       }
     }
   </style>
@@ -168,20 +195,25 @@
 
 <body>
   <main class="page">
-    <img src="IMG_0316.png" alt="CAST" class="logo" />
+    <div class="divider"></div>
+
+    <div class="launching">Launching</div>
+
+    <div class="date">01 · 11 · 2026</div>
 
     <div class="divider"></div>
 
-    <h1 class="headline">Something Different Is Coming.</h1>
+    <div class="tagline">
+      Built by Anglers.<br />
+      Trusted by Everyone.
+    </div>
 
-    <p class="sub">Join the Founding Members list.</p>
-
-    <form>
+    <form class="signup">
       <input type="email" placeholder="Enter your email address" />
-      <button type="submit">JOIN THE LIST</button>
+      <button type="button">Join the List</button>
     </form>
 
-    <div class="footer">Built by Anglers. Trusted by Everyone.</div>
+    <div class="socials">◎ ▶ ♪</div>
   </main>
 </body>
 </html>
