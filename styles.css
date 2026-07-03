@@ -21,8 +21,7 @@ body::before {
   background-image: url("IMG_0316.png");
   background-repeat: no-repeat;
   background-position: center top;
-  background-size: min(1180px, 96vw) auto;
-  opacity: 0.98;
+  background-size: min(1000px, 90vw) auto;  opacity: 0.98;
   pointer-events: none;
   z-index: -2;
 }
