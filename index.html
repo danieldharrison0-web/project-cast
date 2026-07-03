@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CAST</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #2a241c 0%, #080808 45%, #000 100%);
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .page {
+      padding: 32px;
+      max-width: 900px;
+    }
+
+    .logo {
+      font-size: clamp(64px, 14vw, 180px);
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      color: #050505;
+      text-shadow:
+        1px 1px 0 #2b2b2b,
+        -1px -1px 0 #000,
+        0 0 35px rgba(212, 168, 91, 0.18);
+      margin-bottom: 40px;
+    }
+
+    .tagline {
+      color: #caa76a;
+      letter-spacing: 0.45em;
+      font-size: 13px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: clamp(44px, 9vw, 96px);
+      margin: 0 0 18px;
+      letter-spacing: 0.03em;
+    }
+
+    .gold {
+      color: #d6ad63;
+    }
+
+    p {
+      font-size: 18px;
+      color: #cfcfcf;
+      margin-bottom: 34px;
+    }
+
+    form {
+      display: flex;
+      max-width: 520px;
+      margin: 0 auto;
+      border: 1px solid rgba(214, 173, 99, 0.35);
+      border-radius: 6px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.04);
+    }
+
+    input {
+      flex: 1;
+      padding: 18px;
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 16px;
+      outline: none;
+    }
+
+    button {
+      padding: 0 26px;
+      border: none;
+      background: linear-gradient(135deg, #e0bb72, #a9772f);
+      color: #080808;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .small {
+      margin-top: 18px;
+      font-size: 13px;
+      color: #8f8f8f;
+    }
+
+    @media (max-width: 600px) {
+      form {
+        flex-direction: column;
+      }
+
+      button {
+        padding: 16px;
+      }
+
+      .tagline {
+        letter-spacing: 0.25em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="logo">CAST</div>
+
+    <div class="tagline">Built by Anglers. Trusted by Everyone.</div>
+
+    <h1>WIN <span class="gold">BIGGER.</span></h1>
+
+    <p>Join the Founding Members list.</p>
+
+    <form>
+      <input type="email" placeholder="Enter your email address" />
+      <button type="submit">JOIN THE LIST</button>
+    </form>
+
+    <div class="small">Something different is coming.</div>
+  </main>
+</body>
+</html>
