@@ -344,3 +344,9 @@ footer {
     gap: 18px;
   }
 }
+.logo {
+    width: 320px;
+    max-width: 85%;
+    display: block;
+    margin: 0 auto 30px;
+}
