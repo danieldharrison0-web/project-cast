@@ -1,64 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CAST | Coming Soon</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAST | Something Different Is Coming</title>
+
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <section class="hero">
-    <div class="hero-overlay"></div>
 
-    <header class="site-header">
-      <div class="brand">CAST</div>
-      <nav>
-        <a href="#join">Join the List</a>
-      </nav>
-    </header>
+    <section class="hero">
 
-    <main class="hero-content">
-      <p class="pre-title">Built by Anglers. Trusted by Everyone.</p>
+        <header class="site-header">
 
-      <h1>
-        SOMETHING<br />
-        DIFFERENT<br />
-        IS COMING.
-      </h1>
+            <div class="brand">
+                CAST
+            </div>
 
-      <div class="line"></div>
+            <nav>
+                <a href="#join">Join the List</a>
+            </nav>
 
-      <div class="countdown">
-        <div><span id="days">00</span><small>Days</small></div>
-        <div><span id="hours">00</span><small>Hours</small></div>
-        <div><span id="minutes">00</span><small>Minutes</small></div>
-        <div><span id="seconds">00</span><small>Seconds</small></div>
-      </div>
+        </header>
 
-      <form id="join" class="signup">
-        <input type="email" placeholder="Enter your email address" required />
-        <button type="submit">Join the List</button>
-      </form>
+        <main class="hero-content">
 
-      <p class="hint">Be the first to know when we launch.</p>
-    </main>
+            <p class="pre-title">
+                Built by Anglers. Trusted by Everyone.
+            </p>
 
-    <div class="scroll-cue">
-      <span>Scroll</span>
-      <div>↓</div>
-    </div>
-  </section>
+            <h1>
+                SOMETHING<br>
+                DIFFERENT<br>
+                IS COMING.
+            </h1>
 
-  <section class="quiet-section">
-    <p>Some things are worth waiting for.</p>
-  </section>
+            <div class="line"></div>
 
-  <footer>
-    <span>© 2026 CAST</span>
-    <span>Built in the UK</span>
-  </footer>
+            <div class="countdown">
 
-  <script src="script.js"></script>
+                <div>
+                    <span id="days">00</span>
+                    <small>DAYS</small>
+                </div>
+
+                <div>
+                    <span id="hours">00</span>
+                    <small>HOURS</small>
+                </div>
+
+                <div>
+                    <span id="minutes">00</span>
+                    <small>MINUTES</small>
+                </div>
+
+                <div>
+                    <span id="seconds">00</span>
+                    <small>SECONDS</small>
+                </div>
+
+            </div>
+
+            <form id="join" class="signup">
+
+                <input
+                    type="email"
+                    placeholder="Enter your email address"
+                    required>
+
+                <button type="submit">
+                    Join the List
+                </button>
+
+            </form>
+
+            <p class="hint">
+                Be the first to know when we launch.
+            </p>
+
+        </main>
+
+        <div class="scroll-cue">
+            <span>Scroll</span>
+            <div>↓</div>
+        </div>
+
+    </section>
+
+    <section class="quiet-section">
+
+        <p>
+            Some things are worth waiting for.
+        </p>
+
+    </section>
+
+    <footer>
+
+        <span>
+            © 2026 CAST
+        </span>
+
+        <span>
+            Built in the UK
+        </span>
+
+    </footer>
+
+    <script>
+
+        const launchDate = new Date("November 1, 2026 00:00:00").getTime();
+
+        function updateCountdown() {
+
+            const now = new Date().getTime();
+
+            const distance = launchDate - now;
+
+            if (distance < 0) return;
+
+            document.getElementById("days").innerHTML =
+                Math.floor(distance / (1000 * 60 * 60 * 24));
+
+            document.getElementById("hours").innerHTML =
+                Math.floor((distance / (1000 * 60 * 60)) % 24);
+
+            document.getElementById("minutes").innerHTML =
+                Math.floor((distance / (1000 * 60)) % 60);
+
+            document.getElementById("seconds").innerHTML =
+                Math.floor((distance / 1000) % 60);
+
+        }
+
+        updateCountdown();
+
+        setInterval(updateCountdown, 1000);
+
+    </script>
+
 </body>
+
 </html>
