@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAST | Competitions</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<style>
+
+.page{
+    max-width:1400px;
+    margin:140px auto 80px;
+    padding:0 6vw;
+}
+
+.page h1{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.page p{
+    color:#c8bda8;
+    margin-bottom:50px;
+}
+
+.competitions{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#0c0c0c;
+    border:1px solid rgba(176,138,90,.2);
+    overflow:hidden;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#b08a5a;
+}
+
+.card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:28px;
+}
+
+.card h2{
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+.price{
+    color:#b08a5a;
+    font-size:22px;
+    margin-bottom:25px;
+}
+
+.progress{
+    height:4px;
+    background:#222;
+    margin:20px 0;
+}
+
+.progress span{
+    display:block;
+    height:100%;
+    width:74%;
+    background:#b08a5a;
+}
+
+.info{
+    display:flex;
+    justify-content:space-between;
+    color:#bdb7ae;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+.enter{
+    width:100%;
+    padding:16px;
+    background:#b08a5a;
+    color:#050505;
+    border:none;
+    cursor:pointer;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+}
+
+.enter:hover{
+    background:#c79a61;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="site-header">
+
+<a href="index.html" class="logo">CAST</a>
+
+<nav>
+
+<a href="competitions.html">Competitions</a>
+<a href="#">Winners</a>
+<a href="#">How It Works</a>
+<a href="#">About</a>
+
+</nav>
+
+</header>
+
+<div class="page">
+
+<h1>Current Competitions</h1>
+
+<p>
+Premium tackle competitions. No gimmicks. Just gear you'd genuinely want to own.
+</p>
+
+<div class="competitions">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1511884642898-4c92249e20b6?w=900" alt="Competition">
+
+<div class="card-content">
+
+<h2>Shimano Ultegra XR Bundle</h2>
+
+<div class="price">
+Enter from £2.99
+</div>
+
+<div class="progress">
+<span></span>
+</div>
+
+<div class="info">
+<span>183 Tickets Remaining</span>
+<span>999 Maximum Entries</span>
+</div>
+
+<button class="enter">
+Enter Competition
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900" alt="Competition">
+
+<div class="card-content">
+
+<h2>Fox Frontier XD Package</h2>
+
+<div class="price">
+Enter from £3.49
+</div>
+
+<div class="progress">
+<span style="width:52%"></span>
+</div>
+
+<div class="info">
+<span>422 Tickets Remaining</span>
+<span>999 Maximum Entries</span>
+</div>
+
+<button class="enter">
+Enter Competition
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?w=900" alt="Competition">
+
+<div class="card-content">
+
+<h2>Nash Titan Bundle</h2>
+
+<div class="price">
+Enter from £4.99
+</div>
+
+<div class="progress">
+<span style="width:18%"></span>
+</div>
+
+<div class="info">
+<span>821 Tickets Remaining</span>
+<span>999 Maximum Entries</span>
+</div>
+
+<button class="enter">
+Enter Competition
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
