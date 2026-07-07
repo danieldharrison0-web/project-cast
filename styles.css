@@ -530,3 +530,68 @@ GENERAL PAGES
   line-height:1.8;
   margin-bottom:50px;
 }
+/* ==========================
+MOBILE
+========================== */
+
+@media(max-width:900px){
+
+  .site-header{
+    padding:22px 24px;
+  }
+
+  .logo{
+    font-size:22px;
+  }
+
+  nav{
+    display:none;
+  }
+
+  .header-btn{
+    font-size:10px;
+    padding:11px 14px;
+  }
+
+  .hero{
+    padding:120px 24px 90px;
+    background-position:62% center;
+  }
+
+  .eyebrow{
+    letter-spacing:.2em;
+    line-height:1.8;
+  }
+
+  .hero h1{
+    font-size:46px;
+    letter-spacing:.03em;
+  }
+
+  .hero-copy{
+    font-size:17px;
+  }
+
+  .featured-comp{
+    grid-template-columns:1fr;
+    padding:80px 24px;
+  }
+
+  .featured-image img{
+    height:360px;
+  }
+
+  .feature-strip{
+    grid-template-columns:1fr;
+    padding:70px 24px;
+  }
+
+  .quiet-panel{
+    padding:75px 24px;
+  }
+
+  footer{
+    flex-direction:column;
+    gap:14px;
+  }
+}
