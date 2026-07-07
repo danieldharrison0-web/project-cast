@@ -1,255 +1,255 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  background:#050505;
+  color:#f2eee6;
+  font-family:Arial,Helvetica,sans-serif;
+  overflow-x:hidden;
 }
 
-body {
-  background: #050505;
-  color: #f4efe7;
-  font-family: Arial, Helvetica, sans-serif;
-  overflow-x: hidden;
+a{text-decoration:none;color:inherit}
+
+.site-header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:26px 6vw;
+  background:linear-gradient(180deg,rgba(0,0,0,.75),transparent);
 }
 
-.hero {
-  min-height: 100vh;
-  position: relative;
-  background-image:
-    linear-gradient(90deg, rgba(0,0,0,.86) 0%, rgba(0,0,0,.58) 38%, rgba(0,0,0,.18) 100%),
-    linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.82)),
+.logo{
+  color:#b08a5a;
+  font-size:28px;
+  font-weight:700;
+  letter-spacing:.35em;
+}
+
+nav{
+  display:flex;
+  gap:28px;
+  color:#c8bda8;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+}
+
+.header-btn{
+  border:1px solid rgba(176,138,90,.55);
+  padding:13px 20px;
+  color:#b08a5a;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding:130px 6vw 80px;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.55),rgba(0,0,0,.2)),
     url("5E4FFD0F-38D3-4870-AB2B-571593DF09A9.png");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  padding: 120px 6vw 80px;
+  background-size:cover;
+  background-position:center;
 }
 
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10;
-  padding: 28px 6vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.hero-content{
+  max-width:760px;
 }
 
-.brand {
-  color: #b38a5a;
-  font-size: 30px;
-  letter-spacing: .35em;
-  font-weight: 700;
+.eyebrow{
+  color:#b08a5a;
+  text-transform:uppercase;
+  letter-spacing:.35em;
+  font-size:12px;
+  margin-bottom:30px;
 }
 
-nav a {
-  color: #b38a5a;
-  border: 1px solid rgba(179,138,90,.55);
-  padding: 14px 22px;
-  text-transform: uppercase;
-  letter-spacing: .16em;
-  font-size: 12px;
+h1{
+  font-size:clamp(48px,7vw,104px);
+  line-height:1.05;
+  font-weight:300;
+  letter-spacing:.08em;
+  margin-bottom:34px;
 }
 
-.hero-content {
-  max-width: 760px;
-  position: relative;
-  z-index: 2;
+.hero-line{
+  width:95px;
+  height:1px;
+  background:#b08a5a;
+  margin-bottom:34px;
 }
 
-.pre-title {
-  color: #b38a5a;
-  text-transform: uppercase;
-  letter-spacing: .35em;
-  font-size: 12px;
-  margin-bottom: 30px;
+.countdown{
+  display:flex;
+  gap:34px;
+  margin-bottom:38px;
 }
 
-h1 {
-  font-size: clamp(48px, 7vw, 104px);
-  line-height: 1.08;
-  font-weight: 300;
-  letter-spacing: .28em;
-  color: #f4efe7;
-  margin-bottom: 34px;
+.countdown div{
+  min-width:85px;
+  position:relative;
 }
 
-.line {
-  width: 90px;
-  height: 1px;
-  background: #b38a5a;
-  margin-bottom: 34px;
+.countdown div:not(:last-child)::after{
+  content:"";
+  position:absolute;
+  right:-18px;
+  top:8px;
+  width:1px;
+  height:52px;
+  background:rgba(176,138,90,.35);
 }
 
-.countdown {
-  display: flex;
-  gap: 34px;
-  margin-bottom: 38px;
+.countdown strong{
+  display:block;
+  color:#b08a5a;
+  font-size:46px;
+  font-weight:300;
 }
 
-.countdown div {
-  min-width: 88px;
-  position: relative;
+.countdown span{
+  display:block;
+  margin-top:8px;
+  color:#d8d2ca;
+  text-transform:uppercase;
+  letter-spacing:.25em;
+  font-size:10px;
 }
 
-.countdown div:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  right: -18px;
-  top: 8px;
-  width: 1px;
-  height: 54px;
-  background: rgba(179,138,90,.35);
+.join-form{
+  display:flex;
+  width:min(620px,100%);
+  border:1px solid rgba(176,138,90,.55);
+  background:rgba(0,0,0,.65);
 }
 
-.countdown span {
-  display: block;
-  color: #b38a5a;
-  font-size: 48px;
-  font-weight: 300;
+.join-form input{
+  flex:1;
+  padding:22px 24px;
+  border:0;
+  outline:0;
+  background:transparent;
+  color:white;
+  font-size:16px;
 }
 
-.countdown small {
-  display: block;
-  margin-top: 8px;
-  color: #d8d2ca;
-  text-transform: uppercase;
-  letter-spacing: .28em;
-  font-size: 11px;
+.join-form button{
+  width:190px;
+  border:0;
+  background:linear-gradient(135deg,#b08a5a,#7c5e3f);
+  color:#050505;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.1em;
 }
 
-.signup {
-  display: flex;
-  width: min(620px, 100%);
-  border: 1px solid rgba(179,138,90,.55);
-  background: rgba(0,0,0,.65);
+.small-note{
+  margin-top:18px;
+  color:rgba(242,238,230,.65);
 }
 
-.signup input {
-  flex: 1;
-  padding: 22px 24px;
-  border: none;
-  outline: none;
-  background: transparent;
-  color: #fff;
-  font-size: 16px;
+.quiet-panel{
+  min-height:45vh;
+  background:#050505;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:80px 6vw;
+  border-top:1px solid rgba(176,138,90,.18);
 }
 
-.signup button {
-  width: 190px;
-  border: none;
-  background: linear-gradient(135deg, #b38a5a, #7a5c3a);
-  color: #080808;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: .1em;
+.cast-mark{
+  color:#b08a5a;
+  border:1px solid rgba(176,138,90,.35);
+  width:64px;
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:28px;
+  font-size:32px;
 }
 
-.hint {
-  margin-top: 18px;
-  color: rgba(244,239,231,.68);
+.quiet-panel p{
+  font-size:clamp(28px,5vw,62px);
+  letter-spacing:.1em;
 }
 
-.scroll-cue {
-  position: absolute;
-  left: 50%;
-  bottom: 42px;
-  transform: translateX(-50%);
-  color: #b38a5a;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: .25em;
-  font-size: 11px;
+footer{
+  padding:34px 6vw;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  border-top:1px solid rgba(176,138,90,.18);
+  color:#b08a5a;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-size:12px;
 }
 
-.scroll-cue div {
-  font-size: 30px;
-  animation: bounce 1.8s infinite;
-}
+@media(max-width:850px){
+  nav{display:none}
 
-.quiet-section {
-  min-height: 42vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #050505;
-  padding: 80px 6vw;
-  text-align: center;
-}
-
-.quiet-section p {
-  font-size: clamp(28px, 5vw, 64px);
-  letter-spacing: .12em;
-  color: #f4efe7;
-}
-
-footer {
-  padding: 34px 6vw;
-  display: flex;
-  justify-content: space-between;
-  border-top: 1px solid rgba(179,138,90,.18);
-  color: #b38a5a;
-  text-transform: uppercase;
-  letter-spacing: .18em;
-  font-size: 12px;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(8px); }
-}
-
-@media (max-width: 800px) {
-  .hero {
-    padding: 110px 24px 90px;
-    background-position: 64% center;
+  .site-header{
+    padding:22px 24px;
   }
 
-  .brand {
-    font-size: 22px;
+  .logo{
+    font-size:22px;
   }
 
-  nav a {
-    padding: 11px 14px;
-    font-size: 10px;
+  .header-btn{
+    font-size:10px;
+    padding:11px 14px;
   }
 
-  h1 {
-    font-size: 42px;
-    letter-spacing: .18em;
+  .hero{
+    padding:120px 24px 80px;
+    background-position:62% center;
   }
 
-  .pre-title {
-    letter-spacing: .22em;
-    line-height: 1.8;
+  .eyebrow{
+    letter-spacing:.22em;
+    line-height:1.8;
   }
 
-  .countdown {
-    gap: 18px;
-    flex-wrap: wrap;
+  h1{
+    font-size:46px;
+    letter-spacing:.04em;
   }
 
-  .countdown span {
-    font-size: 34px;
+  .countdown{
+    flex-wrap:wrap;
+    gap:18px;
   }
 
-  .countdown div:not(:last-child)::after {
-    display: none;
+  .countdown div:not(:last-child)::after{
+    display:none;
   }
 
-  .signup {
-    flex-direction: column;
+  .countdown strong{
+    font-size:36px;
   }
 
-  .signup button {
-    width: 100%;
-    padding: 18px;
+  .join-form{
+    flex-direction:column;
   }
 
-  footer {
-    flex-direction: column;
-    gap: 14px;
+  .join-form button{
+    width:100%;
+    padding:18px;
+  }
+
+  footer{
+    flex-direction:column;
   }
 }
