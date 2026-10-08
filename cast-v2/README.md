@@ -18,7 +18,7 @@ Navigation covers homepage, filtered competitions catalogue, three competition d
 
 All fixtures in `js/data.js` are illustrative. The read-only `js/services.js` adapter separates presentation from data retrieval; authenticated server endpoints can replace it later. `js/app.js` renders views and handles local preview interactions. No payment SDK, network API, persistence, registration, ticket allocation or real draw implementation exists. Sensitive actions are disabled; account fields are disabled to avoid collecting personal data. Admin is intentionally a public fixture preview, not a security boundary.
 
-The countdown is a relative demonstration anchored to page load. Prices, values, inventory and ticket references are invented illustrative records. Product imagery is explicitly labelled atmosphere photography; merchandise uses abstract placeholders. The existing `IMG_0316.png` artwork is used unchanged for the logo. No new logo artwork has been created.
+Countdowns use fixed illustrative closing dates, displayed in Europe/London. Prices, values, inventory and ticket references are invented illustrative records. Competition galleries use explicitly labelled approved-photography placeholders; merchandise uses abstract placeholders. The existing `IMG_0316.png` artwork is used unchanged for the logo. No new logo artwork has been created.
 
 Before future production development: establish approved rules and provider acceptance; implement server-side authentication/authorization, transactional capacity limits and unique tickets, verified/idempotent payment webhooks, reconciliation, auditable draws, privacy controls, durable jobs and backup recovery. Never turn these fixture values into production truth. Replace static rendering with safely escaped components when consuming external data: current HTML templates consume repository-owned constants only.
 
@@ -29,3 +29,11 @@ No vendor framework or dependencies are introduced for this design phase. A futu
 `node --check cast-v2/js/app.js` (and data/services modules) checks syntax. Browser validation covers all routes, phone/tablet/desktop layout, navigation, filters, tabs, quantity bounds, countdown updates, disabled financial/account actions and no unexpected network requests.
 
 The browser checks are saved in `tests/browser.cjs`. With the preview server on port 8001 and Playwright plus Chromium available, run `node cast-v2/tests/browser.cjs` from the repository root. This environment supplies both; no test dependency is required by the website itself. Screenshots are written to `/tmp/cast-v2-mobile.png` and `/tmp/cast-v2-desktop.png`.
+
+## Phase 2 refinement
+
+Catalogue search, category filtering and sorting combine; cards show demo entry price, value, remaining tickets and fixed UK closing dates. Details include gallery controls, specifications, quick quantities (1/5/10/20 bounded by per-customer and remaining-ticket limits), and a deliberately unassessed example skill question. No answer leaves the browser.
+
+My CAST has entries, fictional wins, orders with demo receipts, and profile/preferences previews. The founder workspace has competition creation/edit layouts, numeric/date validation, a disabled image-upload interface, fictional customer search, orders, and draw/winner-record previews. Form submissions are intercepted, report local validation only, and never persist. Do not enter personal data into demo forms.
+
+Approved product photos (main view, package contents and detail) are still required for each prize. No substitute photos or product illustrations were fabricated. The existing exact logo image is unchanged; a bronze frame improves separation from the background. A lighter approved original would improve the dark wordmark's legibility further; no filter or redraw has been applied.

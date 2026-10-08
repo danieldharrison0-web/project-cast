@@ -10,3 +10,11 @@ export const products = [
  {id:'cap',name:'The session cap',type:'Cap',price:24,colour:'Bronze / black',sizes:['One size']}
 ];
 export const demoEntries = [{competition:'The Ultegra collection',tickets:['CAST-0142','CAST-0143','CAST-0144'],status:'Illustrative entry'},{competition:'Your bankside sanctuary',tickets:['CAST-0281','CAST-0282'],status:'Illustrative entry'}];
+
+export const demoCustomer = {name:'Alex Morgan',email:'alex@example.invalid',joined:'August 2026'};
+export const demoOrders = [{id:'DEMO-1042',date:'02 Oct 2026',item:'Ultegra collection · 3 sample entries',total:8.97,status:'Demo confirmed'},{id:'DEMO-1038',date:'28 Sep 2026',item:'Frontier package · 2 sample entries',total:6.98,status:'Demo confirmed'}];
+competitions.forEach((c,i)=>{
+ c.limit=20; c.start='2026-10-01T09:00'; c.close=['2026-11-20T20:00:00Z','2026-11-27T20:00:00Z','2026-12-04T20:00:00Z'][i];
+ c.specs=[['Package',c.prize.replace('Illustrative prize: ','')],['Condition','New · illustrative specification'],['Delivery','UK delivery arrangements to be confirmed'],['Entry limit','20 per customer · demo rule']];
+ c.gallery=['Main product view','Package contents','Product detail'];
+});
