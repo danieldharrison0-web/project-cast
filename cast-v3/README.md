@@ -12,13 +12,13 @@ Use a separate project named `cast-v3-preview`, leaving the existing V2 and prod
 
 Connect this repository, retain `main` as the Production Branch, and deploy `cast-v3` as a Preview. Use Framework: Other; Root Directory: repository root; no install command; Build Command: `sh cast-v3/build-preview.sh`; Output Directory: `cast-v3-preview-dist`. Do not connect a production domain. The build stages only V3 and its required artwork; it performs no deployment. Do not use the V2 build command, which copies only V2 files.
 
-Open the generated Preview deployment URL followed by `/cast-v3/` in iPad Safari and authenticate through Vercel. Review homepage, Competitions, prize details, Collection, Account, My CAST and the demo founder workspace (footer link). Delete the temporary deployment when review finishes. Publication and preview access are not performed by this repository change.
+Open the generated Preview deployment URL at `/` in iPad Safari and authenticate through Vercel. Review homepage, Competitions, prize details, Collection, Account, My CAST and the demo founder workspace (footer link). Delete the temporary deployment when review finishes. Publication and preview access are not performed by this repository change.
 
 ## Design and assets
 
 V3 introduces a cinematic homepage, editorial introduction, large headline prize, cohesive competition cards, collection colour studies, refined account/dashboard surfaces and founder tools. Typography uses local Georgia and Arial with no third-party font loading. Subtle transitions respect reduced-motion preferences. A keyboard skip link and visible focus indicators support navigation.
 
-The exact existing `IMG_0316.png` logo is used unchanged. The existing lake image is used only as atmospheric photography. Prize galleries are clearly labelled photography placeholders; no unrelated photographs, invented product illustrations or fabricated brand marks are used. Merchandise shows labelled colour studies, not product photographs. Approved licensed main/product-detail/package photographs and an approved lighter logo asset remain desirable inputs.
+The header and footer use `assets/cast-signature-no1.svg`, a transparent vector wordmark created from the Signature No. 1 written brief. The concept artwork was not available for comparison, so visual approval is still needed. All original image assets remain unchanged. The existing lake image is used only as atmospheric photography. Prize galleries are clearly labelled photography placeholders; no unrelated photographs, invented product illustrations or fabricated brand marks are used. Merchandise shows labelled colour studies, not product photographs. Approved licensed main/product-detail/package photographs remain desirable inputs.
 
 ## Demo boundary
 
@@ -29,3 +29,7 @@ Data fixtures are in `js/data.js`, the read-only adapter in `js/services.js`, an
 ## Validation
 
 With the server on port 8003 and Playwright/Chromium installed, run `node cast-v3/tests/browser.cjs`. Set `TEST_WIDTH=390` or `TEST_WIDTH=768` to exercise interactions at phone/tablet widths. Tests cover 18 routes at 320, 390, 768, 1024 and 1440px, plus demo interactions, errors and missing assets. Run `node cast-v3/tests/design.cjs` for keyboard, reduced-motion, asset integrity and staged-preview checks. This browser testing does not replace hands-on iPad Safari review.
+
+The preview build now places index.html, styles.css, js/ and assets/ directly at the output root. Existing atmospheric photo paths resolve against root-level image assets. No /cast-v3/ prefix is needed on the deployed URL. The build clears only its generated output before staging to prevent stale V2/V3 directories. The homepage strapline is MEMORIES • ADVENTURES • LEGACY, separate from the header.
+
+For deployment-root regression coverage, serve `cast-v3-preview-dist` directly on port 8004, then run `PREVIEW_URL=http://127.0.0.1:8004/ node cast-v3/tests/browser.cjs`. This verifies the root homepage and assets without access to parent repository files.
