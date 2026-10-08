@@ -18,7 +18,7 @@ Open the generated Preview deployment URL at `/` in iPad Safari and authenticate
 
 V3 introduces a cinematic homepage, editorial introduction, large headline prize, cohesive competition cards, collection colour studies, refined account/dashboard surfaces and founder tools. Typography uses local Georgia and Arial with no third-party font loading. Subtle transitions respect reduced-motion preferences. A keyboard skip link and visible focus indicators support navigation.
 
-The header and footer use `assets/cast-signature-no1.svg`, a transparent vector wordmark created from the Signature No. 1 written brief. The concept artwork was not available for comparison, so visual approval is still needed. All original image assets remain unchanged. The existing lake image is used only as atmospheric photography. Prize galleries are clearly labelled photography placeholders; no unrelated photographs, invented product illustrations or fabricated brand marks are used. Merchandise shows labelled colour studies, not product photographs. Approved licensed main/product-detail/package photographs remain desirable inputs.
+The header and footer use `assets/CAST_Variant_B_Wordmark.svg`, the exact approved CAST Variant B SVG supplied by the user, copied without altering its artwork. All original image assets remain unchanged. The existing lake image is used only as atmospheric photography. Prize galleries are clearly labelled photography placeholders; no unrelated photographs, invented product illustrations or fabricated brand marks are used. Merchandise shows labelled colour studies, not product photographs. Approved licensed main/product-detail/package photographs remain desirable inputs.
 
 ## Demo boundary
 

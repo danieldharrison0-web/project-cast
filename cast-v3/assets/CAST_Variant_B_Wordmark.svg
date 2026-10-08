@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+<title id="title">CAST — Variant B</title>
+<desc id="desc">Wide geometric CAST wordmark in satin bronze, with a distinctive dot below the A. Transparent background.</desc>
+<defs><linearGradient id="bronze" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D3B184"/><stop offset="0.48" stop-color="#B58B5E"/><stop offset="1" stop-color="#987047"/></linearGradient></defs>
+<g fill="none" stroke="url(#bronze)" stroke-width="29" stroke-linecap="square" stroke-linejoin="miter">
+<!-- C --> <path d="M260 73 H157 Q123 73 123 107 V190 Q123 224 157 224 H260"/>
+<!-- A --> <path d="M358 224 L431 73 L504 224"/>
+<!-- S --> <path d="M704 73 H607 Q572 73 572 110 Q572 145 608 145 H666 Q704 145 704 183 Q704 224 665 224 H566"/>
+<!-- T --> <path d="M792 73 H1047 M919 73 V224"/>
+</g>
+<circle cx="431" cy="198" r="10" fill="#B58B5E"/>
+</svg>
