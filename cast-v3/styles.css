@@ -8,3 +8,23 @@
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .direction-icon{display:inline-block;width:12px;height:12px;position:relative;flex-shrink:0}.direction-icon::before{content:'';position:absolute;right:0;top:0;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor}.direction-icon::after{content:'';position:absolute;left:1px;top:6px;width:12px;border-top:1px solid currentColor;transform:rotate(-45deg)}.menu-icon{display:inline-block;width:13px;height:9px;margin-left:8px;border-top:1px solid currentColor;border-bottom:1px solid currentColor;vertical-align:middle}.notice>span{display:none}
 .featured-section>.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}.headline-art .prize-placeholder{min-height:390px}.button:disabled{background:#1a241c;color:#c4cbbb;border-color:#58624e;opacity:1}@media(max-width:760px){.featured-section>.cards{grid-template-columns:1fr}.headline-art .prize-placeholder{min-height:250px}.hero{min-height:550px}}
+/* Competition cards: compact image-led layout, all placeholder text in normal flow. */
+.prize-placeholder{justify-content:space-between;gap:28px}
+.prize-placeholder .eyebrow{margin:0;flex-shrink:0}
+.placeholder-caption{display:grid;gap:8px;width:100%;min-width:0}
+.prize-placeholder .placeholder-caption strong{margin:0;font-size:20px;line-height:1.2;overflow-wrap:anywhere}
+.prize-placeholder .placeholder-caption small{display:block;line-height:1.5;overflow-wrap:anywhere}
+.competition-card{background:#111713;border:1px solid #384239;display:flex;flex-direction:column}
+.competition-card .prize-placeholder{min-height:0;aspect-ratio:16/9;padding:22px;background:#202923}
+.competition-card .prize-placeholder.frontier{background:#252c25}
+.competition-card .prize-placeholder.titan{background:#242a28}
+.competition-card .card-body{padding:20px;display:flex;flex-direction:column;flex:1;min-width:0}
+.competition-card .card-body>.eyebrow{font-size:9px;margin-bottom:9px}
+.competition-card h3{font-size:25px;line-height:1.15;margin-bottom:16px;overflow-wrap:anywhere}
+.competition-card .card-meta{margin:0 0 4px;gap:18px}
+.competition-card .card-meta strong{font-size:25px}
+.competition-card .card-meta small{font-size:10px;line-height:1.5}
+.competition-card progress{margin:13px 0}
+.competition-card .card-facts{gap:5px;margin:0 0 16px;font-size:11px;line-height:1.5}
+.competition-card .card-entry{margin-top:auto;border-color:#8c7755;color:#dcc39d;min-height:44px;font-weight:400}
+@media(max-width:760px){.competition-card .prize-placeholder{padding:18px;aspect-ratio:1.9;gap:18px}.competition-card .prize-placeholder .placeholder-caption strong{font-size:19px}.competition-card .card-body{padding:18px}.competition-card h3{font-size:25px;margin-bottom:14px}.cards,.featured-section>.cards{gap:24px}.competition-card .card-facts{font-size:10px}.headline-art .prize-placeholder{gap:20px}.detail-photo .prize-placeholder{gap:24px}}
